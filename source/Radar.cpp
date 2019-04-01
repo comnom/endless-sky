@@ -30,6 +30,7 @@ const int Radar::SPECIAL = 5;
 const int Radar::ANOMALOUS = 6;
 const int Radar::BLINK = 7;
 const int Radar::VIEWPORT = 8;
+const int Radar::SCANNING = 9;
 
 
 
@@ -141,7 +142,8 @@ const Color &Radar::GetColor(int type)
 		*GameData::Colors().Get("radar special"),
 		*GameData::Colors().Get("radar anomalous"),
 		*GameData::Colors().Get("radar blink"),
-		*GameData::Colors().Get("radar viewport")
+		*GameData::Colors().Get("radar viewport"),
+		*GameData::Colors().Get("radar scanning")
 	};
 	
 	if(static_cast<size_t>(type) >= color.size())

@@ -85,6 +85,7 @@ color "radar special" 1. 1. 1. 0.
 color "radar anomalous" .7 0. 1. 0.
 color "radar blink" 1. 1. 1. 0.
 color "radar viewport" 0. .3 0. 0.
+color "radar scanning" 1. .8 .6 0.
 
 # Colors used for warning and error tooltip backdrops.
 color "error back" .25 .1 .1 1.

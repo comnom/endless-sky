@@ -74,9 +74,11 @@ namespace {
 			return Radar::INACTIVE;
 		if(ship.IsYours() || (ship.GetPersonality().IsEscort() && !ship.GetGovernment()->IsEnemy()))
 			return Radar::PLAYER;
+		const auto &target = ship.GetTargetShip();
+		if(target && target->IsYours() && ship.Commands().Has(Command::SCAN))
+			return Radar::SCANNING;
 		if(!ship.GetGovernment()->IsEnemy())
 			return Radar::FRIENDLY;
-		const auto &target = ship.GetTargetShip();
 		if(target && target->IsYours())
 			return Radar::HOSTILE;
 		return Radar::UNFRIENDLY;

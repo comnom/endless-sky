@@ -34,6 +34,7 @@ public:
 	static const int ANOMALOUS;
 	static const int BLINK;
 	static const int VIEWPORT;
+	static const int SCANNING;
 	
 	
 public:
