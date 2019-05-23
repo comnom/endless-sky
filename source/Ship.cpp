@@ -1897,27 +1897,6 @@ int Ship::Scan()
 	if(isYours || (target->isYours && activeScanning))
 		Audio::Play(Audio::Get("scan"), Position());
 	
-	if(startedScanning && isYours)
-	{
-		if(!target->Name().empty())
-			Messages::Add("Attempting to scan the " + target->Noun() + " \"" + target->Name() + "\".", false);
-		else
-			Messages::Add("Attempting to scan the selected " + target->Noun() + ".", false);
-	}
-	else if(startedScanning && target->isYours)
-		Messages::Add("The " + government->GetName() + " " + Noun() + " \""
-			+ Name() + "\" is attempting to scan you.", false);
-	
-	if(target->isYours && !isYours)
-	{
-		if(result & ShipEvent::SCAN_CARGO)
-			Messages::Add("The " + government->GetName() + " " + Noun() + " \""
-					+ Name() + "\" completed its scan of your cargo.");
-		if(result & ShipEvent::SCAN_OUTFITS)
-			Messages::Add("The " + government->GetName() + " " + Noun() + " \""
-					+ Name() + "\" completed its scan of your outfits.");
-	}
-	
 	return result;
 }
 

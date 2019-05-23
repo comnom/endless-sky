@@ -310,7 +310,6 @@ void AI::UpdateKeys(PlayerInfo &player, Command &clickCommands, bool isActive)
 			if(!it->IsParked() && it->Attributes().Get("cloak"))
 			{
 				isCloaking = !isCloaking;
-				Messages::Add(isCloaking ? "Engaging cloaking device." : "Disengaging cloaking device.");
 				break;
 			}
 	
@@ -328,7 +327,8 @@ void AI::UpdateKeys(PlayerInfo &player, Command &clickCommands, bool isActive)
 			if(it->HasBays())
 			{
 				isLaunching = !isLaunching;
-				Messages::Add(isLaunching ? "Deploying fighters." : "Recalling fighters.");
+				if(!isLaunching)
+					Messages::Add("Recalling fighters.");
 				break;
 			}
 	
